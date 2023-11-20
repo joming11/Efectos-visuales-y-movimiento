@@ -1,0 +1,1314 @@
+Efectos visuales y movimiento*/
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: sans-serif;
+	font-size: 16px;
+	overflow-x: hidden;
+}
+
+*,*::after,*::before {
+	box-sizing: inherit;
+}
+
+.box {
+	border: thick solid black;
+	height: 300px;
+	margin-bottom: 3rem;
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+}
+
+.shadows {
+	/*color: lightgreen; puedo definir un color y este aplicara a la sombra*/
+	/*box-shadow: movimiento en x, movimiento en y, desenfoque radial(blur), expansion del desenfoque, color, sombra interna o externa;*/
+	box-shadow: 1rem 1rem 1rem 1rem; /*el color de sombra es negro por defecto*/
+	box-shadow: 7px 7px 1rem 1rem lightgreen;
+	/*box-shadow: 7px 7px 1rem 1rem saddlebrown inset; sombra interna*/
+	/*no se debe escribir outset para definir una sombra externa pues es el valor por defecto y genera error*/
+	/*box-shadow: -7px -7px 1rem 1rem; puede recibir valores negativos*/
+	/*box-shadow: 7px 7px 1rem 1rem #0005; se puede aplicar opacidad al color de sombra*/
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: center;
+	/*text-shadow: mov-x, mov-y, desenfoque radial(blur), color;*/
+	text-shadow: 7px 7px .25rem lightgreen; /*mientras mas cercano a 0 este blur, mas solida es la sombra*/
+}
+
+/*Sombras multiples - para cajas y textos*/
+.shadows-mult {
+	box-shadow: 7px 7px 1rem 1rem lightgreen, 7px 7px 1rem 1rem lightgreen inset;
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 7px 7px .15rem yellowgreen, -7px -7px .25rem limegreen;
+}
+
+.inline {
+	display: inline-flex;
+	height: 300px;
+	/*height: 300px; puede asignarse auto para que se adapte al contenido*/
+	margin-right: 2rem;
+	width: 300px;
+	/*width: 300px; puede indicarse auto para que se adapte al contenido*/
+}
+
+/*filter drop shadow*/
+
+.drop-shadow-k img {
+	/*filter: drop-shadow(mov-x, mov-y, blur-radius, color); aplica el sombreado a imagenes con transparencia y se adapta al contorno de las mismas y sus elementos*/
+	box-shadow: 5px 5px .5rem .7rem orangered;
+	filter: drop-shadow(.6rem -.8rem .1rem yellow);
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.drop-shadow-t img {
+	/*filter: drop-shadow(mov-x, mov-y, blur-radius, color); aplica el sombreado a imagenes con transparencia y se adapta al contorno de las mismas y sus elementos*/
+	box-shadow: 5px 5px .5rem .7rem darkturquoise;
+	filter: drop-shadow(.6rem -.8rem .1rem skyblue);
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.drop-shadow-y img {
+	/*filter: drop-shadow(mov-x, mov-y, blur-radius, color); aplica el sombreado a imagenes con transparencia y se adapta al contorno de las mismas y sus elementos*/
+	box-shadow: 5px 5px .5rem .7rem yellow;
+	filter: drop-shadow(.6rem -.8rem .1rem orangered);
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.drop-shadow-u img {
+	/*filter: drop-shadow(mov-x, mov-y, blur-radius, color); aplica el sombreado a imagenes con transparencia y se adapta al contorno de las mismas y sus elementos*/
+	box-shadow: 5px 5px .5rem .7rem black;
+	filter: drop-shadow(.6rem -.8rem .1rem forestgreen);
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.drop-shadow-s img {
+	/*filter: drop-shadow(mov-x, mov-y, blur-radius, color); aplica el sombreado a imagenes con transparencia y se adapta al contorno de las mismas y sus elementos*/
+	box-shadow: 5px 5px .5rem .7rem hotpink;
+	filter: drop-shadow(.6rem -.8rem .1rem lightcoral);
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.drop-shadow-ya img {
+	/*filter: drop-shadow(mov-x, mov-y, blur-radius, color); aplica el sombreado a imagenes con transparencia y se adapta al contorno de las mismas y sus elementos*/
+	box-shadow: 5px 5px .5rem .7rem black;
+	filter: drop-shadow(.6rem -.8rem .1rem darkred);
+	max-height: 100%;
+	max-width: 125%;
+}
+
+/*Degradados - Gradients*/
+
+.linear-gradient {
+	/*background-image: linear-gradient(); recibe grados de inclinacion, o palabras de posicion, colores, % de color*/
+	background-image: linear-gradient(0deg, green, yellow, red);
+	background-image: linear-gradient(45deg, green, yellow, red);
+	background-image: linear-gradient(90deg, green, yellow, red);
+	background-image: linear-gradient(120deg, green, yellow, red);
+	background-image: linear-gradient(180deg, green, yellow, red); /*esto seria la posicion inicial*/
+	background-image: linear-gradient(to bottom, green, yellow, red); /*el ultimo color se posicionara respecto a la palabra de indicacion, to right, to left, to top, to bottom*/
+	/*background-image: linear-gradient(to bottom, green, yellow, red); se pueden usar dos palabra to top left, to top right*/
+	background-image: linear-gradient(90deg, green 20%, yellow 55%, red);
+	/*background-image: linear-gradient(90deg, green 33%, yellow 34% 67%, red 68%);*/
+}
+
+.radial-gradient {
+	background-image: radial-gradient(cyan, magenta);
+	background-image: radial-gradient(cyan, magenta, yellow);
+	background-image: radial-gradient(circle, cyan, magenta, yellow);
+	background-image: radial-gradient(circle 5rem, cyan, magenta, yellow);
+	background-image: radial-gradient(circle 5rem, cyan 30%, magenta 80%, yellow);
+	background-image: radial-gradient(circle 100px, cyan 30%, magenta 60%, yellow 90%); /*circle 100px, son 100px de radio, 200px de diametro*/
+	background-image: radial-gradient(ellipse 100px 50px, cyan 30%, magenta 60%, yellow 90%); /*elipse 100px 50px, representa el radio en x y el radio en y, para que el degradado sea eliptico*/
+	background-image: radial-gradient(circle 100px at top, cyan 30%, magenta 60%, yellow 90%); /*se puede definir el centro del radio de degradado*/
+	background-image: radial-gradient(circle 100px at bottom, cyan 30%, magenta 60%, yellow 90%); /*se puede definir el centro del radio de degradado*/
+	background-image: radial-gradient(circle 100px at top left, yellow 30%, darkorange 60%, cyan 95%); /*se puede definir el centro del radio de degradado*/
+	/*background-image: radial-gradient(circle 100px, red 50%, white 50%);*/
+}
+
+/*Degradado conico
+
+prefiero manejarlo con grados, porque es un cono como hsl, y asi lo entiendo mejor.
+top center va a ser como 0°
+si decidimos que el cono va a empezar en 90°, esto rotara la imagen y 0° pasara a ser center right
+si definimos 135° seria bottom right
+180° seria bottom center
+270° seria center left*/
+.conic-gradient {
+	background-image: conic-gradient(royalblue, white);
+	background-image: conic-gradient(royalblue, white, red);
+	background-image: conic-gradient(royalblue 100deg, white 120deg 230deg, red 250deg);
+	background-image: conic-gradient(royalblue 90deg, white 120deg 240deg, red 270deg);
+	background-image: conic-gradient(from 300deg, royalblue 90deg, white 120deg 240deg, red 270deg);
+	/*background-image: conic-gradient(from 90deg, royalblue 120deg, white 120deg 240deg, red 240deg);*/
+}
+
+/*Repeticion de patrones de degradados*/
+
+.repeat-gradient-linear {
+	background-image: repeating-linear-gradient(green 50px, yellow 70px 130px, red 150px);
+	background-image: repeating-linear-gradient(90deg, green 50px, yellow 70px 130px, red 150px);
+	background-image: repeating-linear-gradient(green 0 20px, yellow 30px 60px, red 70px 100px);
+}
+
+.repeat-gradient-radial {
+	background-image: repeating-radial-gradient(ellipse 25px 50px, cyan 0 10px, magenta 20px 30px, yellow 40px 50px);
+	background-image: repeating-radial-gradient(cyan 0 10px, magenta 20px 30px, yellow 40px 50px);
+}
+
+.repeat-gradient-conic {
+	background-image: repeating-conic-gradient(red 0 8%, yellow 9% 17%, black 18% 26%);
+}
+
+/*Graficas con degradados*/
+
+.chart-gradient {
+	background-image: conic-gradient(red 0% 34%, slateblue 34% 58%, antiquewhite 58%);
+	border-radius: 50%;
+}
+
+.donut-gradient {
+	background-image: radial-gradient(white 40%, black 41%, transparent 43%),conic-gradient(darkred 0% 34%, sandybrown 34% 58%, ghostwhite 58%);
+	border-radius: 50%;
+}
+
+/*Filtros*/
+.card {
+	/*display: flex;
+	justify-content: center;
+	align-items: center;*/
+	border: thick solid black;
+	height: 300px;
+	margin-bottom: 2rem;
+	margin-left: auto;
+	margin-right: auto;
+	width: 290px;
+}
+
+.card img {
+	height: 100%;
+	object-fit: cover;
+	object-position: 0 50%;
+	width: 100%;
+}
+
+.card figcaption {
+	padding: 1rem;
+}
+
+/*desenfoque radial - va de 0 menos difuso, a 1 mas difuso*/
+.blur img {
+	filter: blur(.15rem);
+}
+
+/*Luminosidad - va de 0 menos iluminado, a 1, iluminado, valor mayor a 1, se satura la imagen*/
+.brightness img {
+	filter: brightness(.7);
+}
+
+/*Contraste - va de 0 sin contraste, a 1, contraste, por encima del valor maximo, se satura la imagen*/
+
+.contrast img {
+	filter: contrast(.6);
+}
+
+/*Escala de grises - va de 0 nivel mas bajo de la escala, a 1, totalmente a escala*/
+
+.grayscale img {
+	filter: grayscale(.91);
+}
+
+/*Sepia - tonos amarillos y cafe - va de 0 menor valor, a 1, mayor valor*/
+
+.sepia img {
+	filter: sepia(.90);
+}
+
+/*Rotacion de tono, segun los grados del circulo cromatico*/
+
+.hue-rotate img {
+	filter: hue-rotate(120deg);
+}
+
+/*Inversion, va de 0, no aplica nada, a 1, invierte todo la tonalidad, no tiene valores intermedios, es 0 o 1 y el inversion sera el opuesto respecto a ° segun el espectro cromatico*/
+.invert img {
+	filter: invert(1);
+}
+
+/*Opacidad, va de 0, volviendo la imagen un cuadro blanco, a 1*/
+.opacity {
+	filter: opacity(.84);
+}
+
+/*Saturacion - va de 0, imagen grisacea, a 1, saturacion correcta, valor mayor a 1, sobresatura la imagen*/
+.saturate img {
+	filter: saturate(3);
+}
+
+/*Filtros Multiples - se usa filter, y la propiedad se separa con espacio en blanco*/
+.filter-mult {
+	filter: blur(.11rem) hue-rotate(330deg);
+}
+
+/*filtros a fondos*/
+.relative {
+	position: relative;
+}
+
+.absolute {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.backdrop-filter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.backdrop-filter h4 {
+	border-radius: 1rem;
+	/*font-size: 2rem;
+	padding: 1rem;*/
+	background-color: rgba(51, 255, 60, 0.25);
+	backdrop-filter: sepia(1);
+	backdrop-filter: opacity(1);
+	backdrop-filter: hue-rotate(7deg);
+	backdrop-filter: blur(.11rem);
+}
+
+/*Utilidad de modo dark/light*/
+
+/*.darkmode {
+	background-color: white;
+	color: black;
+	filter: invert(1);
+}
+
+.darkmode img {
+	filter: invert(1);
+}*/
+
+/*Modos de mezcla*/
+.blend-mode img {
+	mix-blend-mode: normal; valor por default
+	mix-blend-mode: screen;
+	mix-blend-mode: color-dodge;
+	mix-blend-mode: color-burn;
+	mix-blend-mode: multiply;
+	mix-blend-mode: saturation;
+	mix-blend-mode: luminosity;
+	mix-blend-mode: lighten;
+	mix-blend-mode: darken;
+	mix-blend-mode: hue;
+	mix-blend-mode: overlay;
+	mix-blend-mode: exclusion;
+	mix-blend-mode: hard-light;
+	mix-blend-mode: soft-light;
+	max-width: 100%;
+}
+
+/*Modos de mezcla en Background*/
+.bg-blend-modes {
+	height: 70vh;
+	width: 70vw;
+	background-image: url("../assets/bleach-01.jpg"), url("../assets/brave-souls-ichigo.png");
+	background-size: cover;
+	background-blend-mode: color;
+	background-blend-mode: screen;
+	background-blend-mode: color-dodge;
+	background-blend-mode: color-burn;
+	background-blend-mode: multiply;
+	background-blend-mode: saturation;
+	background-blend-mode: luminosity;
+	background-blend-mode: lighten;
+	background-blend-mode: darken;
+	background-blend-mode: hue;
+	background-blend-mode: overlay;
+	background-blend-mode: hard-light;
+	background-blend-mode: soft-light;
+	background-blend-mode: exclusion;
+}
+
+/*Enmascaramiento - Clip-Path*/
+/*.clip-path-c {
+	clip-path: circle(definimos el tamaño del radio del circulo,ej 100px); 
+}
+*/
+
+/*.clip-path-c {
+	clip-path: circle(100px y la ubicacion del enmascarado, ej, at top, bottom, lef, rigth); 
+}
+*/
+
+/*.clip-path-c {
+	clip-path: circle(100px o combinar el posicionamiento, at right bottom);
+	o moverlo por coordenadas, o %, (50px at 10%-x, 12%-y) 
+}
+*/
+
+.clip-path-c {
+	clip-path: circle(80px);
+}
+
+.clip-path-e {
+	clip-path: ellipse(60px 110px);
+}
+
+/*reduce la mascara la cantidad que se indica, ej, se cierra 3rem
+se puede indicar como en el modelo de caja, un valor para cada lado
+o dos valores, para top,bottom y los lados, o 3 valores, top, los lados, y bottom
+se puede usar round para redondear los bordes, 1 valor que aplica a los 4 lados
+dos valores, el primero para top left & bottom right, el otro para los otros lados*/
+
+.clip-path-i {
+	clip-path: inset(3rem round 11px);
+}
+
+.clip-path-p {
+	clip-path: polygon(10% 0, 10% 100%, 100% 50%);
+}
+
+/*Formas y siluetas entre textos e imagenes*/
+
+.shape {
+	border: thick solid black;
+	margin: 0 auto 3rem;
+	max-width: 800px;
+	padding: 1rem;
+}
+
+.shape img {
+	border-radius: 50%;
+	height: 300px;
+	object-fit: cover;
+	width: 300px;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.shape-1 {
+	margin: 1rem 2rem 1rem 0;
+	shape-outside: circle();
+}
+
+.shape-2 {
+	margin: 1rem 0 1rem 2rem;
+	shape-outside: circle();
+}
+
+.shape-3 {
+	margin: 1rem 2rem 0 0;
+	clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+	shape-outside: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+/*Sitio one page*/
+
+body, h2, h3 {
+	margin: 0;
+}
+
+.header {
+	background-color: darkgray;
+	color: white;
+	padding: .25rem;
+	position: sticky;
+	text-align: center;
+	top: 0;
+}
+
+.header a {
+	margin: 0 1rem;
+	color: whitesmoke;
+}
+
+.header a:hover {
+	color: mistyrose;
+}
+
+.slide {
+	background-color: powderblue;
+	color: whitesmoke;
+	min-height: 100vh;
+	padding-top: 4rem;
+	padding-left: .5rem;
+	width: 100%;
+}
+
+.slide:nth-child(even){
+	background-color: steelblue;
+}
+
+.slide img {
+	height: 50vh;
+	width: 50vw;
+}
+
+/*Scroll snaps - slide vertical*/
+
+.slides {
+	height: 100vh;
+	overflow-y: scroll;
+	/*scroll-snap-type: se puede indicar x o inline para controlar el eje horizontal
+	y o block para controlar el eje vertical, o both para controlar ambos;
+	el ajuste de control se logra con mandatory o proximity*/
+	scroll-snap-type: block mandatory;
+	width: 100%;
+}
+
+.slide-s {
+	background-color: yellowgreen;
+	height: inherit;
+	width: 100%;
+	scroll-snap-align: none;
+	scroll-snap-align: start;
+	scroll-snap-align: end;
+	scroll-snap-align: center;
+}
+
+.slide-s:nth-child(odd) {
+	background-color: forestgreen;
+}
+
+.slide-container {
+	color: whitesmoke;
+	display: flex;
+	flex-direction: column;
+	font-size: 3vw;
+	height: inherit;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	width: 75%;
+}
+
+/*Scroll snap-carrusel horizontal
+condiciones basicas para aplicar scroll-snap-type
+-definir una altura o anchura al contenedor padre donde se va a usar la propiedad
+-la propiedad overflow debe tener el valor scroll
+-definir la propiedad scroll-snap-type
+-y los hijos del contenedor debe tener la propiedad scroll-snap-align*/
+
+.carousel {
+	border: thick solid darkred;
+	display: flex;
+	height: 50vh;
+	/*overflow-x: scroll;*/
+	overflow-x: hidden;
+	width: 70%;
+}
+
+.carousel-contain {
+	display: grid;
+	grid-template-columns: repeat(5, 100%);
+	/*overflow-x: hidden;*/
+	overflow-x: scroll;
+	width: 100%;
+	scroll-snap-type: inline proximity;
+	scroll-snap-type: x mandatory;
+}
+
+.carousel-slide {
+	background-color: cornsilk;
+	color: forestgreen;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	scroll-snap-align: start;
+	scroll-snap-align: end;
+	scroll-snap-align: center;
+}
+
+.carousel-slide:nth-child(even) {
+	background-color: chartreuse;
+	color: white;
+}
+
+/*Texto con degradado*/
+.gradient-text {
+	background-image: linear-gradient(green, yellow, red);
+	-ms-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-ms-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent;
+}
+
+/*Transiciones en css
+transition-property - propiedad que sufrira la transition
+transition-duration - cuanto va a durar la transition
+transition-timing-function: como va a ser esa transition
+transition-timing-function: linear - velocidad constante
+transition-timing-function: ease - con aceleracion
+transition-timing-function: ease-in aceleracion al comienzo
+transition-timing-function: ease-out aceleracion al final
+transition-timing-function: ease-in-out aceleracion al comienzo y al final
+transition-timing-function: step - por pasos
+transition-timing-function: none;
+transition-delay: tiempo de espera para que comience la transicion;
+Shorthand
+transition: property duration timing-function delay;
+*/
+
+/*a este elemento se le va a aplicar la transition, pero cual?*/
+.transition .box {
+	background-color: darkred;
+	transition-property: background-color;
+	transition-duration: 500ms;
+	transition-timing-function: ease;
+	transition-delay: 0.5s;
+}
+
+/*esta transicion*/
+.transition .box:hover {
+	background-color: lightcyan;
+}
+
+/*si se aplicara otra transicion, esta reemplazaria a la primera
+-para aplicar mas de una transicion se usa all
+transition: all 1s ease-in 250ms
+-el detalle con all, aparte de afectar el rendimiento, es que generaliza
+la forma en la que ocurre la transicion
+para validar mas de una transicion -
+transition: opacity 1s ease-out, border-color 3s steps(3)*
+
+-las transiciones declaradas se van a aplicar cada vez que se recargue la pagina
+-incluso si esta definido que ocurran bajo un estado, como hover
+-esto ocurre por la especificidad de css
+-hay que validar que solo se ejecuten las propiedades declaradas revisando
+la especificidad*/
+
+.box-img {
+	border: thick solid black;
+	height: 300px;
+	margin-bottom: 3rem;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	width: 300px;
+}
+
+.box-img img {
+	width: 135%;
+	/*height: auto;*/
+	object-fit: cover;
+	object-position: 0 50%;
+	position: absolute;
+	top: -80px;
+	left: -50px;
+}
+
+.transition .box-img {
+	/*box-shadow: 10px 10px .25rem 10px darkred;*/
+	clip-path: circle();
+	transition: border 1s ease, drop-shadow 1.5s ease-in, clip-path 2s steps(3) 1.5s, width 2s ease-out;	
+}
+
+.transition .box-img:hover {
+	border: thick solid darkred;
+	filter: drop-shadow(.6rem -.8rem .1rem darkred);
+	clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+	width: 400px;
+}
+
+/*.transition .box-img img {
+	transition: object-position 3s ease-in-out;
+}
+
+.transition .box-img img:hover {
+	object-position: 0 -80%;
+}*/
+
+/*//////Transformaciones en CSS///////*/
+
+/*Transformaciones basicas
+-traslacion, en x (valores + y -, en px, em, rem, %...), en y (valores + y -), y z, pero para z se necesita una perspectiva
+-deformacion de tamaño - scale (recibe valores negativos, si ambos son negativos, la imagen se voltea)
+-rotacion, en grados, en x, es una rotacion frontal, en y, funciona como la apertura de una puerta
+-en z es una rotacion natural que sigue las agujas del reloj o contrareloj si se de un valor -
+-rotate y rotateZ es la misma funcion
+-sesgado - skew - en x, en y, no tiene funcion Z
+-se maneja en grados
+-matrix - matriz matematica que afecta 6 propiedades
+matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())
+recibe valores enteros
+
+-para aplicar mas de un transform, se deja un espacio en blanco en la declaracion
+-transform: translate(valor, valor) rotate(20°) scale(.7);*/
+
+.transform-2d img {
+	transition: transform 2s ease-in-out;
+}
+
+.transform-2d img:hover {
+	/*transform: none; valor por defecto*/
+	transform: translateX(20px);
+	transform: translateY(20px);
+	transform: translate(30px, 30px); /*valores pa x y Y*/
+	transform: scaleX(2);
+	transform: scaleY(1.5);
+	transform: scale(1.5, 1.5);
+}
+
+/*Activando la perspectiva 3D
+-se usa la funcion perspective()
+-esta puede ir en la caja padre o directo en el elemento
+-recibe un valor, en em´s, rems, px...
+-este valor es la representacion de la perspectiva
+-mientras mas alto es ese valor, mas lento es el efecto*/
+
+.transform-3d {
+	perspective: 10rem;
+}
+
+.transform-3d img {
+	transition: transform 2s ease-in-out;
+}
+
+.transform-3d img:hover {
+	transform: perspective(50rem) translateZ(50px);
+	transform: perspective(20rem) translateZ(-150px);
+	transform: translate3d(30px, 60px, -90px);
+	transform: scale3d(1.2, 1.3, 1.4);
+	transform: rotateX(45deg);
+	transform: rotateX(-45deg);
+	transform: rotateY(45deg);
+	transform: rotateY(-45deg);
+	transform: rotate3d(1.5, 1.5, 1, 45deg);
+	/*transform: rotate3d(0, 0, 1, 45deg) translate3d(10px, 0px, 0px) scale3d(1.0, 1.0, 1.0);
+	aplicacion de transformaciones multiples*/
+}
+
+/*Origen de la transformacion
+-transform-origin: define el centro de pivote de la rotacion
+-valor inicial 50% para x, 50% par y, y 0 para z
+-se puede definir transform-origin: 0 0
+-si se define un solo valor, este aplicará solo para x
+y partira desde el 50%*/
+
+.transform-origin img {
+	transition: transform 2s ease-in-out;
+	transform-origin: 0 0;
+	transform-origin: top left;
+}
+
+.transform-origin img:hover {
+	transform: rotateY(45deg);
+	transform: rotateX(45deg);
+	transform: rotate(45deg);/*rotacion en Z*/
+}
+
+/*flip cards
+-se usa la propiedad backface visibility para ver el contenido
+trasero de una flip card
+-esta propiedad funciona en 3d
+-por lo que se debe activar la perspectiva 3d*/
+
+.flip-card-1, .flip-card-2 {
+	border: thin solid black;
+	cursor: pointer;
+	height: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 3rem;
+	perspective: 10rem;
+	position: relative;
+	transition: transform 1s ease-in-out;
+	/*transform-style: flat; esta propiedad define como se van a comportar los hijos de un elemento con perspective*/
+	/*transform-style: flat; para que las flips ocurran en el mismo plano que su contenedor padre*/
+	transform-style: preserve-3d; /*para que los elementos hijos tengan su propia perspectiva*/
+	width: 600px;
+}
+
+.flip-card-2 {
+	transform-origin: center right;
+}
+
+.flip-card-2:hover {
+	transform: translateX(-100%) rotateY(-180deg);
+}
+
+.flip-card-1:hover {
+	transform: rotateY(180deg);
+}
+
+.flip-card-1 img, .flip-card-2 img {
+	height: 100%;
+	/*object-fit: cover;*/
+	width: 100%;
+}
+
+.flip-face {
+	/*backface-visibility: visible; valor por defecto*/
+	backface-visibility: hidden; /*solo funciona en transformaciones 3d*/
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+.flip-front {
+	transform: rotateY(0deg);
+}
+
+.flip-back {
+	transform: rotateY(180deg);
+}
+
+
+/*///Animaciones///*/
+/*animation: rcibe los valores name duration timing-function delay iteration-count direction fill-mode play-state
+-como ejecutar una animacion
+-estableciendo un nombre
+-definiendo la duracion
+-usando @keyframes y estableciendo ahi, un estado inicial y uno final
+
+-timing-function la forma en la que ocurre la animacion
+ease, ease-in, ease-out, steps-end, cubic-bezier
+
+-animation-delay - tiempo de espera para que comience la animacion
+
+-iteration-count - numero de veces que se va a repetir la animacion
+se puede definir un numero y tambien aplicar infinite
+
+-animation-direction - sentido de la animacion - valor inicial, normal
+puede tambien recibir el valor reverse, alternate, alternate-reverse
+
+-fill-mode, valor por defecto, none, valor forward, hace que la animacion
+quedé con los valores finales de aplicacion
+backward - hace que la animacion quede con los valores inciales de la animacion
+para conservar ambos valores, se usa both es decir, si el desplazamiento
+hace que la animacion quede en el sitio final, que tenga las propiedades
+del final, si finaliza en el punto de inicio, que tenga los valores de inicio
+
+-en el @keyframe podemos definir "fotogramas" es decir, trabajar sobre la linea
+de tiempo de css
+-definir en cual % de avance de la animacion queremos aplicar determinada propiedad
+
+-para aplicar mas de una animacion, se separan por , los nombres y duracion
+animation:  animation1 2s, animation2 3s;*/
+
+@keyframes firstAnimation {
+	from {
+		opacity: 0;
+		transform: translateX(0px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(50%);
+	}
+}
+
+.my-animation {
+	animation-name: firstAnimation;
+	animation-duration: 3s;
+	animation-timing-function: e;
+}
+
+/*Efectos de movimientos*/
+
+.motion-examples {
+	text-align: center;
+}
+
+/*//// Efecto fade in / fade out ////*/
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.fade-in {
+	animation: fadeIn 2s linear infinite alternate;
+	font-size: 3rem;
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.fade-out {
+	animation: fadeOut 2s linear infinite alternate;
+	font-size: 3rem;
+}
+
+.marg-bottom {
+	margin-bottom: 2rem;
+}
+
+/*///Efecto Shake ////*/
+
+@keyframes shake {
+	10%, 90% {
+		transform: translateX(-1px);
+	}
+	20%, 80% {
+		transform: translateX(2px);
+	}
+	30%, 50%, 70% {
+		transform: translateX(-3px);
+	}
+	40%, 60% {
+		transform: translateX(3px);
+	}
+}
+
+.shake {
+	display: inline-block;
+	font-size: 3vw;
+	cursor: pointer;
+}
+
+.shake:hover {
+	animation: shake 1s cubic-bezier(.36, .07, .19, .97) both;
+	transform: translate(0,0);
+}
+
+/*///Efecto pulse ///*/
+
+@keyframes pulse {
+	0% {
+		transform: scale(1.1);
+	}
+	50% {
+		transform: scale(.8);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.pulse {
+	animation: pulse 1s linear infinite;
+	font-size: 3vw;
+}
+
+/*///Corazon con css///*/
+
+.heart {
+	/*background-color: #c7c7c7;*/
+	animation: pulse 1s infinite;
+	height: 10vw;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	width: 10vw;
+}
+
+@keyframes heartColor {
+	10% {
+		background-color: #a00;
+	}
+}
+
+.heart::after, .heart::before {
+	background-color: darkred;
+	border-radius: 5vw 5vw 0 0;
+	content: "";
+	height: 8vw;
+	left: 5vw;
+	top: 0;
+	position: absolute;
+	transform: rotate(-45deg);
+	transform-origin: 0 100%;
+	width: 5vw;
+	animation: heartColor 1s infinite;
+}
+
+.heart::after {
+	left: 0;
+	transform: rotate(45deg);
+	transform-origin: 100% 100%;
+}
+
+/*///Loader///*/
+
+
+@keyframes spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.spinner {
+	animation: spinner 1s ease-out infinite;
+	/*background-color: #c7c7c7;*/
+	border: .5vw solid rgba(0, 0, 0, .1);
+	border-left-color: darkblue;
+	border-radius: 50%;
+	height: 5vw;
+	margin-left: auto;
+	margin-right: auto;
+	width: 5vw;
+}
+
+/*///Micro interacciones con botones///*/
+
+.btn {
+	border: none;
+	border-radius: .3rem;
+	box-shadow: .25rem .25rem .5rem .25rem rgba(0, 0, 0, .3);
+	cursor: pointer;
+	font-size: 1.25rem;
+	font-weight: bold;
+	height: 2.5rem;
+	margin-top: 1.5rem;
+	margin-bottom: 3.5rem;
+	overflow: hidden;
+	padding: .3rem;
+	position: relative;
+	width: 15rem;
+}
+
+.anim-bottom::after {
+	background-color: royalblue;
+	bottom: 0;
+	content: "";
+	position: absolute;
+	height: .25rem;
+	width: 0;
+	transition: width 0.5s ease, left 0.5s ease, right 0.5s ease;
+}
+
+.anim-bottom:hover::after {
+	width: 100%;
+}
+
+.to-left::after {
+	left: 0;
+}
+
+.to-center::after {
+	left: 50%;
+}
+
+.to-center:hover::after {
+	left: 0;
+}
+
+.to-right::after {
+	right: 0;
+} 
+
+.anim-bg-grad {
+	background-image: linear-gradient(to right, lightpink, mistyrose, cyan, darkturquoise);
+	background-size: 300% 100%;
+	transition: background-position 1s ease-in-out;
+}
+
+.anim-bg-grad:hover {
+	background-position: 100% 0;
+}
+
+/*///Menu de pestañas (tabs)///*/
+
+.tabs-menu {
+	background-color: cornflowerblue;
+	border-radius: 1rem;
+	display: flex;
+	height: 3rem;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1rem;
+	position: relative;
+	width: 70%;
+}
+
+.tabs-menu input[type="radio"]{
+	display: none;
+}
+
+.tabs-menu label {
+	cursor: pointer;
+	position: relative;
+	text-align: center;
+	width: calc(100% / 4 - .5rem);
+	z-index: 1;
+}
+
+.tabs-menu label:hover {
+	color: ghostwhite;
+}
+
+.tabs-menu input[type="radio"]:checked + label {
+	color: coral;
+}
+
+.tab-bg-hover {
+	background-image: linear-gradient(90deg, floralwhite ,mistyrose, lightpink);
+	border-radius: 1rem;
+	position: absolute;
+	height: 2rem;
+	width: calc(100% / 4 - .5rem);
+	transition: transform 300ms ease-in-out;
+}
+
+/*la virgulilla se hace Alt Gr + [*+]]*/
+#tab-1:checked ~ .tab-bg-hover {
+	transform: translateX(0);
+}
+
+#tab-2:checked ~ .tab-bg-hover {
+	transform: translateX(100%);
+}
+
+#tab-3:checked ~ .tab-bg-hover {
+	transform: translateX(200%);
+}
+
+#tab-4:checked ~ .tab-bg-hover {
+	transform: translateX(300%);
+}
+
+/*se generó un scroll horizontal debido a las animaciones*/
+html {
+	overflow-x: hidden;
+}
+
+/*///Menu off canvas///*/
+
+/*Boton Hamburguesa*/
+
+.off-canvas-btn {
+	cursor: pointer;
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	height: 3rem;
+	opacity: 0;
+	width: 3rem;
+	z-index: 99;
+}
+
+.off-canvas-burger {
+	background-color: darkgray;
+	border-radius: .3rem;
+	cursor: pointer;
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	height: 0.6rem;
+	width: 3rem;
+	transform: rotate(0deg) translate(0, -1.2rem);
+	transform-origin: top left;
+	transition: transform 0.5s ease, background-color 0.5s ease;
+	z-index: 98;
+}
+
+.off-canvas-burger::before, 
+.off-canvas-burger::after{
+	background-color: darkgray;
+	border-radius: .3rem;
+	content: "";
+	display: block;
+	height: 0.6rem;
+	transition: transform 0.5 ease;
+	width: 100%;
+}
+
+.off-canvas-burger::before {
+	transform: rotate(0deg) translate(0, -0.9rem);
+}
+
+.off-canvas-burger::after {
+	transform: rotate(0deg) translate(0, 0.3rem);
+}
+
+.off-canvas-btn:checked + .off-canvas-burger {
+	background-color: transparent;
+}
+
+.off-canvas-btn:checked + .off-canvas-burger::before {
+	transform: rotate(45deg) translate(0, 0);
+}
+
+.off-canvas-btn:checked + .off-canvas-burger::after {
+	transform: rotate(-45deg) translate(.4rem, -.5rem);
+}
+
+/*Navegacion off canvas*/
+
+.off-canvas-menu {
+	background-color: mediumaquamarine;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 97;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: translate(0, -100%);
+	transition: transform 500ms ease-in-out;
+}
+
+.off-canvas-btn:checked ~ .off-canvas-menu {
+	transform: translate(0, 0);
+}
+
+.off-canvas-menu-container {
+	/*background-color: darkturquoise;*/
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	justify-content: center;
+	width: 100%;
+}
+
+.off-canvas-link {
+	border-bottom: thin solid darkturquoise;
+	color: whitesmoke;
+	font-size: 1.5rem;
+	text-align: center;
+	text-decoration: none;
+	padding: 2rem;
+	transition: background-color 500ms ease;
+}
+
+.off-canvas-link:first-child {
+	border-top: thin solid darkturquoise;
+}
+
+.off-canvas-link:hover {
+	background-color: paleturquoise;
+}
+
+/*///Ventana modal///*/
+.modal {
+	background-color: mediumaquamarine;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 97;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 500ms ease-in-out;
+}
+
+.modal:target {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.modal-cont {
+	background-color: white;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	border: thick double darkturquoise;
+	border-radius: 1rem;
+	padding: 2rem;
+	height: 50vh;
+	overflow: hidden;
+	text-align: left;
+	width: 50%;
+}
+
+.modal-close {
+	position: absolute;
+	/*background-color: paleturquoise;*/
+	border: thin solid blueviolet;
+	border-radius: 50%;
+	color: blueviolet;
+	font-size: 2rem;
+	font-weight: bold;
+	height: 3rem;
+	line-height: 3rem;
+	top: 1rem;
+	text-align: center;
+	text-decoration: none;
+	right: 1rem;
+	width: 3rem;
+	transition: transform 300ms ease-in-out;
+}
+
+.modal-close:hover {
+	transform: scale(1.2);
+}
+
+/*///Star Wars Intro///*/
+
+@keyframes introStarWars {
+	0% {
+		transform: perspective(100vh) rotateX(15deg) translateY(100%);
+	}
+	100% {
+		transform: perspective(100vh) rotateX(25deg) translateY(-200%);	
+	}
+}
+
+.star-wars {
+	background-image: url("../assets/stars.jpg");
+	color: #ffb13a;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100vh;
+	overflow: hidden;
+	width: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+.star-wars-cont {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: justify;
+	letter-spacing: 0.1rem;
+	width: 80%;
+	animation: introStarWars 20s linear infinite;
+}
+
+.star-wars h3, .star-wars h4 {
+	font-size: 3rem;
+	text-align: center;
+}
+
+.star-wars p {
+	font-size: 2rem;
+	line-height: 4rem;
+}

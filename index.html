@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es" class="darkmode">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Efectos visuales y movimiento</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<article id="temario">
+		<ul>
+			<li><a href="#visual-effects">Efectos visuales en CSS</a></li>
+			<li><a href="#gradient">Degradados en CSS</a></li>
+			<li><a href="#filters">Filtros en CSS</a></li>
+			<li><a href="#blend-mode">Modos de mezcla en CSS</a></li>
+			<li><a href="#clip-path">Enmascaramiento en CSS</a></li>
+			<li><a href="#shape">Formas y siluetas entre texto e imagenes</a></li>
+			<li><a href="#scroll">Efectos con scroll (<small>Sitio one page</small>)</a></li>
+			<li><a href="#motion">Movimiento en CSS</a></li>
+			<li><a href="#motion-examples">Ejemplos de efectos de movimiento en CSS</a></li>
+
+		</ul>
+	</article>
+	<hr>
+<article id="visual-effects">
+	<h1>Efectos Visuales</h1>
+	<h2>Sombras</h2>
+	<div class="box shadows">
+		<p>Sombra</p>
+	</div>
+	<div class="box shadows-mult">
+		<p>Sombra</p>
+	</div>
+	<div class="box drop-shadow-k inline">
+		<img src="assets/kempachi-zaraki.png">
+	</div>
+	<div class="box drop-shadow-t inline">
+		<img src="assets/tōshirō-hitsugaya.png">
+	</div>
+	<div class="box drop-shadow-y inline">
+		<img src="assets/yamamoto.png">
+	</div>
+	<div class="box drop-shadow-u inline">
+		<img src="assets/ulquiorra.png">
+	</div>
+	<div class="box drop-shadow-s inline">
+		<img src="assets/shunsui.png">
+	</div>
+	<div class="box drop-shadow-ya inline">
+		<img src="assets/yachiru_unohana.png">
+	</div>
+	<a href="#temario">☝️</a>
+</article>
+<hr>
+<article id="gradient">
+	<h2>Degradados</h2>
+	<h3>Degradado Lineal
+		<div class="box linear-gradient"></div>
+	</h3>
+	<h3>
+		Degradado radial
+		<div class="box radial-gradient"></div>
+	</h3>
+	<h3>
+		Degradado Cónico
+		<div class="box conic-gradient"></div>
+	</h3>
+	<h3>
+		Repetir degradados - Patrones
+	</h3>
+	<div class="box repeat-gradient-linear"></div>
+	<div class="box repeat-gradient-radial"></div>
+	<div class="box repeat-gradient-conic"></div>
+	<h3>Graficas con degradados</h3>
+	<div class="box chart-gradient"></div>
+	<div class="box donut-gradient"></div>
+</article>
+<a href="#temario">☝️</a>
+<hr>
+<h2>Filtros</h2>
+<article id="filters">
+	<div class="card blur inline">
+		<figure>
+			<img src="assets/hierbita.jpg" alt="raki">
+			<figcaption>
+				Blur
+			</figcaption>
+		</figure>
+	</div>
+	<div class="card Brightness inline">
+		<figure>
+			<img src="assets/hierbita.jpg" alt="raki">
+			<figcaption>
+				Brightness
+			</figcaption>
+		</figure>
+	</div>
+	<!-- <div class="card brightness inline">
+		<img src="assets/hierbita.jpg" alt="raki">
+	</div> -->
+	<div class="card contrast inline">
+		<figure>
+			<img src="assets/hierbita.jpg" alt="raki">
+			<figcaption>
+				Contrast
+			</figcaption>
+		</figure>
+	</div>
+	<!-- <div class="card contrast inline">
+		<img src="assets/hierbita.jpg" alt="raki">
+	</div> -->
+	<div class="card grayscale inline">
+		<figure>
+			<img src="assets/hierbita.jpg" alt="raki">
+			<figcaption>
+				Grayscale
+			</figcaption>
+		</figure>
+	</div>
+	<!-- <div class="card grayscale inline">
+		<img src="assets/hierbita.jpg" alt="raki">
+	</div> -->
+	<div class="card sepia inline">
+		<figure>
+			<img src="assets/hierbita.jpg" alt="raki">
+			<figcaption>
+				Sepia
+			</figcaption>
+		</figure>
+	</div>
+	<!-- <div class="card sepia inline">
+		<img src="assets/hierbita.jpg" alt="raki">
+	</div> -->
+	<div class="card hue-rotate inline">
+		<figure>
+			<img src="assets/hierbita.jpg" alt="raki">
+			<figcaption>
+				Hue rotate
+			</figcaption>
+		</figure>
+	</div>
+	<div class="card invert inline">
+		<figure>
+			<img src="assets/hierbita.jpg" alt="raki">
+			<figcaption>
+				Invert
+			</figcaption>
+		</figure>
+	</div>
+	<div class="card opacity inline">
+		<figure>
+			<img src="assets/hierbita.jpg" alt="raki">
+			<figcaption>
+				Opacity
+			</figcaption>
+		</figure>
+	</div>
+	<div class="card saturate inline">
+		<figure>
+			<img src="assets/hierbita.jpg" alt="raki">
+			<figcaption>
+				Saturate
+			</figcaption>
+		</figure>
+	</div>
+	<div class="card filter-mult inline">
+		<figure>
+			<img src="assets/hierbita.jpg" alt="raki">
+			<figcaption>
+				Filtros Multiples
+			</figcaption>
+		</figure>
+	</div>
+</article>
+<h3>Estilos a fondos</h3>
+<article class="card relative">
+	<img src="assets/hierbita.jpg" alt="raki">
+	<div class="backdrop-filter">
+		<h4>Hierbita</h4>
+	</div>
+</article>
+<a href="#temario">☝️</a>
+<hr>
+<h2>Modos de Mezcla</h2>
+<article id="blend-mode" class="card relative blend-mode">
+	<img src="assets/bleach-01.jpg" alt="1">
+	<img class="absolute" src="assets/brave-souls-ichigo.png" alt="2">
+</article>
+<h3>Modos de mezcla en Backgrounds</h3>
+<article class="bg-blend-modes">
+</article>
+<a href="#temario">☝️</a>
+<hr>
+<h2 id="clip-path">Mascaras</h2>
+<article class="card clip-path-c">
+	<img src="assets/hierbita.jpg" alt="h">
+</article>
+<article class="card clip-path-e">
+	<img src="assets/hierbita.jpg" alt="h">
+</article>
+<article class="card clip-path-i">
+	<img src="assets/hierbita.jpg" alt="h">
+</article>
+<article class="card clip-path-p">
+	<img src="assets/hierbita.jpg" alt="h">
+</article>
+<a href="#temario">☝️</a>
+<hr>
+<h2>Formas</h2>
+<article id="shape" class="shape">
+	<h3>Formas y siluetas entre textos e imagenes</h3>
+	<img src="assets/gotei13-taito.jpg" alt="gotei" class="float-left shape-1">
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus dolores reprehenderit veritatis sed voluptates, dolore quisquam voluptas, dicta pariatur fugiat quam consectetur laborum, perspiciatis exercitationem ea hic officiis necessitatibus? Et.</p>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, excepturi explicabo ut porro magnam aliquid modi, consequuntur ad reprehenderit nulla nihil assumenda dicta. Modi maiores quia ex quibusdam in debitis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident harum itaque nostrum, mollitia aperiam nihil ipsum accusantium, officia, quo libero quis illo quas iste, quaerat non in omnis quia ducimus.</p>
+	<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima incidunt quibusdam culpa adipisci laudantium ipsum, explicabo nam est. Dolore illum totam commodi sit odit molestias blanditiis architecto? Distinctio perferendis, autem.</p>
+	<img src="assets/espadas.png" alt="espadas" class="float-right shape-2">
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus dolores reprehenderit veritatis sed voluptates, dolore quisquam voluptas, dicta pariatur fugiat quam consectetur laborum, perspiciatis exercitationem ea hic officiis necessitatibus? Et.</p>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, excepturi explicabo ut porro magnam aliquid modi, consequuntur ad reprehenderit nulla nihil assumenda dicta. Modi maiores quia ex quibusdam in debitis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident harum itaque nostrum, mollitia aperiam nihil ipsum accusantium, officia, quo libero quis illo quas iste, quaerat non in omnis quia ducimus.</p>
+	<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima incidunt quibusdam culpa adipisci laudantium ipsum, explicabo nam est. Dolore illum totam commodi sit odit molestias blanditiis architecto? Distinctio perferendis, autem.</p>
+	<img src="assets/five-pot.jpg" alt="potential" class="float-left shape-3">
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus dolores reprehenderit veritatis sed voluptates, dolore quisquam voluptas, dicta pariatur fugiat quam consectetur laborum, perspiciatis exercitationem ea hic officiis necessitatibus? Et.</p>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, excepturi explicabo ut porro magnam aliquid modi, consequuntur ad reprehenderit nulla nihil assumenda dicta. Modi maiores quia ex quibusdam in debitis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident harum itaque nostrum, mollitia aperiam nihil ipsum accusantium, officia, quo libero quis illo quas iste, quaerat non in omnis quia ducimus.</p>
+	<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima incidunt quibusdam culpa adipisci laudantium ipsum, explicabo nam est. Dolore illum totam commodi sit odit molestias blanditiis architecto? Distinctio perferendis, autem.</p>
+</article>
+<a href="#temario">☝️</a>
+<hr>
+<h2 id="scroll">Scroll - Sitio one page</h2>
+<header class="header">
+	<h3>Efectos con scroll (<small>Sitio one page</small>)</h3>
+	<nav>
+		<a href="#seccion-1">seccion1</a>
+		<a href="#seccion-2">seccion2</a>
+		<a href="#seccion-3">seccion3</a>
+		<a href="#seccion-4">seccion4</a>
+		<a href="#seccion-5">seccion5</a>
+		<a href="#temario">☝️</a>
+	</nav>
+</header>
+<section id="seccion-1" class="slide">
+	<h3>seccion 1</h3>
+	<p>
+		Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt ipsum quaerat, consectetur excepturi asperiores pariatur quam eligendi debitis nam vero officia facilis possimus atque, incidunt cum et nisi minus facere.
+	</p>
+	<img src="assets/gotei13-taito.jpg" alt="">
+</section>
+<section id="seccion-2" class="slide">
+	<h3>seccion 2</h3>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui fugiat nostrum minus deleniti molestias possimus suscipit, excepturi. Quia dolorum eveniet quidem rerum sit necessitatibus maiores aliquam, perspiciatis laboriosam nulla sunt?
+	</p>
+	<img src="assets/gotei13-taito.jpg" alt="">
+</section>
+<section id="seccion-3" class="slide">
+	<h3>seccion 3</h3>
+	<p>
+		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus sed eum nostrum voluptatem officia nobis aperiam eaque, at laudantium fuga sunt illo sapiente iure itaque perspiciatis? Porro magnam ad aspernatur!
+	</p>
+	<img src="assets/gotei13-taito.jpg" alt="">
+</section>
+<section id="seccion-4" class="slide">
+	<h3>seccion 4</h3>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Quis, fugit. Facilis similique, adipisci sed inventore suscipit officiis cum quidem velit, recusandae amet, eveniet. Repellat, ea numquam! Eveniet quae delectus assumenda.
+	</p>
+	<img src="assets/gotei13-taito.jpg" alt="">
+</section>
+<section id="seccion-5" class="slide">
+	<h3>seccion 5</h3>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptates ipsam, tempora culpa repudiandae minima saepe aliquid enim et aut? Porro, nemo obcaecati commodi, reiciendis quis rem magni excepturi nostrum.
+	</p>
+	<img src="assets/gotei13-taito.jpg" alt="">
+</section>
+<a href="#temario">☝️</a>
+<hr>
+<h2 id="scroll-slide">Scroll-snap</h2>
+<main class="slides">
+	<section class="slide-s">
+		<article class="slide-container">
+			<h2>Ajuste de scroll</h2>
+			<section class="carousel">
+				<div class="carousel-contain">
+					<article class="carousel-slide">
+						<div class="carousel-slide-cont">
+							<h3 class="gradient-text">Slide 1</h3>
+						</div>
+					</article>
+					<article class="carousel-slide">
+						<div class="carousel-slide-cont">
+							<h3 class="gradient-text">Slide 2</h3>
+						</div>
+					</article>
+					<article class="carousel-slide">
+						<div class="carousel-slide-cont">
+							<h3 class="gradient-text">Slide 3</h3>
+						</div>
+					</article>
+					<article class="carousel-slide">
+						<div class="carousel-slide-cont">
+							<h3 class="gradient-text">Slide 4</h3>
+						</div>
+					</article>
+					<article class="carousel-slide">
+						<div class="carousel-slide-cont">
+							<h3 class="gradient-text">Slide 5</h3>
+						</div>
+					</article>
+				</div>
+			</section>
+			<a href="#temario">☝️</a>
+		</article>
+	</section>
+	<section class="slide-s">
+		<article class="slide-container">
+			<h2>slide 2</h2>
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus consectetur et perferendis repudiandae eos laudantium magnam harum nostrum accusantium, ut repellat ipsam culpa quo similique nihil enim, possimus quas nulla!</p>
+		</article>
+	</section>
+	<section class="slide-s">
+		<article class="slide-container">
+			<h2>slide 3</h2>
+			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo aliquam assumenda, voluptate quae dignissimos ab eligendi laborum harum rerum nihil voluptatibus animi praesentium numquam, nulla facere, nam! Earum, repellat!</p>
+		</article>
+	</section>
+	<section class="slide-s">
+		<article class="slide-container">
+			<h2>slide 4</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio consequuntur modi explicabo aspernatur, ratione ex eum nostrum quas deleniti nisi sit dicta placeat voluptate distinctio quaerat illo, nulla suscipit repellat.</p>
+		</article>
+	</section>
+	<section class="slide-s">
+		<article class="slide-container">
+			<h2>slide 5</h2>
+			<p>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Sequi, at architecto itaque velit distinctio earum. Rem, quidem, laboriosam! Vero id voluptates et nesciunt, sunt esse. Sunt eum neque, aspernatur. Corrupti.</p>
+		</article>
+	</section>
+</main>
+<a href="#temario">☝️</a>
+<hr>
+<h2 id="motion">Movimiento en CSS</h2>
+<hr>
+<section class="transition">
+	<h3>Transiciones</h3>
+	<div class="box"></div>
+	<article class="box-img">
+		<!-- <img src="assets/five-pot.jpg" alt="potential"> -->
+		<img src="assets/yachiru_unohana.png" alt="potential">
+	</article>
+	<hr>
+	<h3>Transformaciones en 2D</h3>
+	<article class="card transform-2d">
+		<img src="assets/five-pot.jpg" alt="potential">
+	</article>
+	<h3>Transformaciones en 3D</h3>
+	<article class="card transform-3d">
+		<img src="assets/five-pot.jpg" alt="potential">
+	</article>
+	<h3>Origen de la transformacion</h3>
+	<article class="card transform-origin">
+		<img src="assets/five-pot.jpg" alt="potential">
+	</article>
+	<h3>Flip Cards</h3>
+	<article class="flip-card-1">
+		<div class="flip-face flip-front">
+			<img src="assets/gotei13-taito.jpg" alt="gotei">
+		</div>
+		<div class="flip-face flip-back">
+			<img src="assets/espadas.png" alt="espadas">
+		</div>
+	</article>
+	<article class="flip-card-2">
+		<div class="flip-face flip-front">
+			<img src="assets/gotei13-taito.jpg" alt="gotei">
+		</div>
+		<div class="flip-face flip-back">
+			<img src="assets/espadas.png" alt="espadas">
+		</div>
+	</article>
+</section>
+<hr>
+<section class="animation">
+	<h3>Animaciones</h3>
+	<article class="card my-animation">
+		<img src="assets/five-pot.jpg" alt="potential">
+	</article>
+</section>
+<a href="#temario">☝️</a>
+<hr>
+<section id="motion-examples" class="motion-examples">
+	<h2>Ejemplos de efectos de movimiento</h2>
+	<h3>fade in/fade out</h3>
+	<div class="fade-in">
+		🏍
+	</div>
+	<div class="fade-out marg-bottom">
+		🏍
+	</div>
+	<h3>Efecto Sacudida</h3>
+	<div class="shake marg-bottom">
+	🍺
+	</div>
+	<h3>Efecto Pulse</h3>
+	<div class="pulse marg-bottom">
+		💚
+	</div>
+	<h3>Dibujar y animar un corazon con CSS</h3>
+	<div class="heart marg-bottom"></div>
+	<h3>Spinner / Loader</h3>
+	<div class="spinner marg-bottom"></div>
+	<h3>Botones animados</h3>
+	<button class="btn anim-bottom to-left">Animacion Izquierda</button>
+	<button class="btn anim-bottom to-center">Animacion Centro</button>
+	<button class="btn anim-bottom to-right">Animacion Derecha</button>
+	<button class="btn anim-bg-grad">fondo con gradiente</button>
+	<h3>Menu de pestañas (tabs)</h3>
+	<nav class="tabs-menu">
+		<input type="radio" name="tabs" id="tab-1">
+		<label for="tab-1">Seccion 1</label>
+
+		<input type="radio" name="tabs" id="tab-2">
+		<label for="tab-2">Seccion 2</label>
+
+		<input type="radio" name="tabs" id="tab-3">
+		<label for="tab-3">Seccion 3</label>
+
+		<input type="radio" name="tabs" id="tab-4">
+		<label for="tab-4">Seccion 4</label>
+		<div class="tab-bg-hover"></div>
+	</nav>
+<h3>Menu off canvas</h3>
+<input type="checkbox" class="off-canvas-btn">
+<label class="off-canvas-burger"></label>
+<nav class="off-canvas-menu">
+	<div class="off-canvas-menu-container">
+		<a href="" class="off-canvas-link">Seccion 1</a>
+		<a href="" class="off-canvas-link">Seccion 2</a>
+		<a href="" class="off-canvas-link">Seccion 3</a>
+		<a href="" class="off-canvas-link">Seccion 4</a>
+		<a href="" class="off-canvas-link">Seccion 5</a>
+	</div>
+</nav>
+<h3>Ventana modal</h3>
+<a href="#modal-1">Abrir modal</a>
+<article id="modal-1" class="modal">
+	<div class="modal-cont">
+		<a href="#cerrar" class="modal-close">X</a>
+		<h3>Ventana modal</h3>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque cum commodi magnam cumque deserunt fugiat mollitia ratione eligendi ipsa sed reiciendis veritatis autem itaque, impedit ducimus quaerat architecto dolorum accusamus?
+		</p>
+		<ul>
+			<li><a href="">enlace</a></li>
+			<li><a href="">enlace</a></li>
+			<li><a href="">enlace</a></li>
+			<li><a href="">enlace</a></li>
+			<li><a href="">enlace</a></li>
+			<li><a href="">enlace</a></li>
+		</ul>
+	</div>
+</article>
+<h3>Star Wars Intro</h3>
+<article class="star-wars">
+	<div class="star-wars-cont">
+		<h3>Episode III</h3>
+		<h4>La Venganza de los Sith</h4>
+		<p>
+			¡Guerra! La República se
+            desmorona  bajo los ataques del
+            despiadado Lord Sith, el Conde
+            Dooku. Hay héroes en ambos
+            bandos. El mal está por doquier. 
+		</p>
+		<p>
+			En una contundente jugada, el
+            diabólico líder droide, el General
+            Grievous, ha irrumpido en la
+            capital de la República y ha
+            secuestrado al Canciller
+            Palpatine, líder del Senado 
+            Galáctico.
+		</p>
+		<p>
+			Mientras el ejército droide
+            separatista trata de huir de la
+            capital sitiada con su valioso
+            rehén, dos Caballeros Jedi
+            lideran una misión desesperada
+            para rescatar al Canciller
+            cautivo....
+		</p>
+	</div>
+</article>
+</section>
+<a href="#temario">☝️</a>
+<hr>
+<a href="#temario">☝️</a>
+</body>
+</html>
